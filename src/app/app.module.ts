@@ -28,7 +28,6 @@ import { GameComponent } from './components/game/game.component';
 import { AudioTurnComponent } from './components/dynamic-turns/audio-turn/audio-turn.component';
 import * as reducers from './store/reducers';
 import { GenericTurnComponent } from './components/dynamic-turns/generic-turn/generic-turn.component';
-import { RoleTurnComponent } from './components/dynamic-turns/role-turn/role-turn.component';
 import { GameEffects } from './store/effects/game.effects';
 import { DialogComponent } from './components/game/dialog/dialog.component';
 import { VoteTurnComponent } from './components/dynamic-turns/vote-turn/vote-turn.component';
@@ -40,6 +39,7 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { RoleDialogComponent } from './components/game/role-dialog/role-dialog.component';
 import { QuestDialogComponent } from './components/game/quest-dialog/quest-dialog.component';
 import { RevealComponent } from './components/reveal/reveal.component';
+import { ICONS } from '../assets/icons';
 
 
 // AoT requires an exported function for factories
@@ -55,7 +55,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RolesComponent,
     GameComponent,
     AudioTurnComponent,
-    RoleTurnComponent,
     GenericTurnComponent,
     DialogComponent,
     VoteTurnComponent,
@@ -65,7 +64,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     OverviewComponent,
     RoleDialogComponent,
     QuestDialogComponent,
-    RevealComponent
+    RevealComponent,
+    ...ICONS
   ],
   imports: [
     HttpClientModule,
@@ -94,7 +94,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatTooltipModule,
     MatChipsModule,
     MatRippleModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
