@@ -55,7 +55,7 @@ const gameReducer = createReducer(
   }),
   on(actions.setGame, (state, game) => ({
     ...state,
-    game: game,
+    game,
   })),
   on(actions.setQuest, (state, { quest, questId }) => ({
     ...state,

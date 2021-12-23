@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { Event, State } from '../../store/reducers';
 import { GenericTurnComponent } from '../dynamic-turns/generic-turn/generic-turn.component';
-import { AudioTurnComponent } from '../dynamic-turns/audio-turn/audio-turn.component';
+import { AudioComponent } from '../audio/audio.component';
 import * as selectors from '../../store/reducers/selectors';
 import { createQuest, questUnsend } from '../../store/actions/actions';
 import { DialogComponent   } from './dialog/dialog.component';
@@ -17,7 +17,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { QuestDialogComponent } from './quest-dialog/quest-dialog.component';
 
 const turns = {
-  'app-audio-turn': AudioTurnComponent,
   'app-vote-turn': VoteTurnComponent,
   'app-end-turn': EndTurnComponent
 };

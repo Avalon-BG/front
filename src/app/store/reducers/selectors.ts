@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 
 import { Event, GameState, State } from '.';
-import { Game, Player, Rules } from '../../types';
+import { Game, Rules } from '../../types';
 
 export const selectGame = (state: State) => state.game;
 
@@ -12,7 +12,7 @@ export const selectGameState = createSelector<State, GameState, Game>(
 
 export const selectGameId = createSelector<State, GameState, string>(
   selectGame,
-  (state: GameState) => state.game.id
+  (state: GameState) => state.game ? state.game.id : undefined
 );
 
 export const selectAudio = createSelector<State, GameState, ArrayBuffer | null>(

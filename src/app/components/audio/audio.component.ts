@@ -1,20 +1,20 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
-import { GenericTurnComponent } from '../generic-turn/generic-turn.component';
-import { State } from '../../../store/reducers';
-import * as actions from '../../../store/actions/actions';
-import * as selectors from '../../../store/reducers/selectors';
+import { State } from '../../store/reducers';
+import * as actions from '../../store/actions/actions';
+import * as selectors from '../../store/reducers/selectors';
 import { Router } from '@angular/router';
+import { startAudioTurn } from '../../store/actions/actions';
+import { selectGameState } from '../../store/reducers/selectors';
 
 @Component({
-  selector: 'app-audio-turn',
-  templateUrl: './audio-turn.component.html',
-  styleUrls: ['./audio-turn.component.scss'],
-  host: { class: 'component-container dynamic-turns' }
+  selector: 'app-audio',
+  templateUrl: './audio.component.html',
+  styleUrls: ['./audio.component.scss'],
+  host: { class: 'component-container' }
 })
-export class AudioTurnComponent extends GenericTurnComponent implements OnInit, OnDestroy {
-
+export class AudioComponent implements OnInit, OnDestroy {
 
   private gameId: string;
   audioContext: AudioContext;
@@ -25,8 +25,7 @@ export class AudioTurnComponent extends GenericTurnComponent implements OnInit, 
   startedAt: number;
   source: AudioBufferSourceNode;
 
-  constructor(private router: Router, private _store: Store<State>) {
-    super(_store);
+  constructor(private router: Router, private store: Store<State>) {
     this.loading = true;
     this.playing = false;
     const contextClass = (window.AudioContext ||
@@ -43,12 +42,14 @@ export class AudioTurnComponent extends GenericTurnComponent implements OnInit, 
   }
 
   ngOnInit() {
-    this._store.pipe(select(selectors.selectGameId)).subscribe(id => {
-      this.gameId = id;
-      this._store.dispatch(actions.getAudio({ gameId: this.gameId }));
+    this.store.pipe(select(selectors.selectGameId)).subscribe(id => {
+      if (!!id) {
+        this.gameId = id;
+        this.store.dispatch(actions.getAudio({ gameId: this.gameId }));
+      }
     });
 
-    this._store.pipe(select(selectors.selectAudio)).subscribe(audio => {
+    this.store.pipe(select(selectors.selectAudio)).subscribe(audio => {
       if (this.gameId && audio) {
         this.audioContext.decodeAudioData(audio, (buffer) => {
             this.buffer = buffer;
@@ -105,12 +106,12 @@ export class AudioTurnComponent extends GenericTurnComponent implements OnInit, 
   }
 
   goBack(): void {
-    this.router.navigate(['roles']);
+    this.router.navigate(['/roles']);
   }
 
   playGame() {
     this.stopAudio();
-    this.finished();
+    this.router.navigate(['/games', this.gameId]);
   }
 
 }

@@ -28,11 +28,9 @@ export class GameEffects {
                 this.router.navigate(['/reveal', game.id]);
               }
             }),
-            switchMap((game: Game) => {
-                return [
-                  actions.setGame(game),
-                ];
-              }
+            switchMap((game: Game) => ([
+                actions.setGame(game),
+              ])
             ),
           )
       ))
@@ -59,6 +57,10 @@ export class GameEffects {
       this.actions$.pipe(
         ofType(actions.getGame),
         switchMap(({ gameId }) => this.gameService.getGame(gameId)),
+        tap((game) => this.configService.players = game.players.map((player) => ({
+          name: player.name,
+          avatar_index: player.avatar_index
+        }))),
         switchMap(game => [actions.setGame(game), actions.onSuccess()]),
         catchError(() => of(actions.onError()))
       )
@@ -158,13 +160,9 @@ export class GameEffects {
       ofType(actions.startAudioTurn),
       withLatestFrom(this.store.select(selectGameState)),
       tap(([_action, game]) => {
-        this.router.navigate(['/games', game.id]);
+        this.router.navigate(['/audio', game.id]);
       }),
-      switchMap(() => [actions.addEvents({
-        events: [{
-          type: 'app-audio-turn',
-        }]
-      })])
+      switchMap(() => []),
     )
   );
 

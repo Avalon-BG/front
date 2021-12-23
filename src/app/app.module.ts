@@ -25,7 +25,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { GameComponent } from './components/game/game.component';
-import { AudioTurnComponent } from './components/dynamic-turns/audio-turn/audio-turn.component';
+import { AudioComponent } from './components/audio/audio.component';
 import * as reducers from './store/reducers';
 import { GenericTurnComponent } from './components/dynamic-turns/generic-turn/generic-turn.component';
 import { GameEffects } from './store/effects/game.effects';
@@ -54,7 +54,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DashboardComponent,
     RolesComponent,
     GameComponent,
-    AudioTurnComponent,
+    AudioComponent,
     GenericTurnComponent,
     DialogComponent,
     VoteTurnComponent,
