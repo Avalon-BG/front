@@ -8,9 +8,11 @@
       <button mat-raised-button (click)="launchGame()">
         {{'LANDING.playButtonLabel' | translate}}
       </button>
-      <button mat-raised-button (click)="launchGame()">
-        {{'LANDING.rulesButtonLabel' | translate}}
-      </button>
+      <a [href]="pdfUrl">
+        <button mat-raised-button>
+          {{'LANDING.rulesButtonLabel' | translate}}
+        </button>
+      </a>
     </div>
   </div>
 

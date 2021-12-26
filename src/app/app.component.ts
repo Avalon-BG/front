@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { getRules } from './store/actions/actions';
 import { State } from './store/reducers';
+import { STORED_LANGUAGE_KEY } from './components/lang-switch/lang-switch.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent implements OnInit {
     translate.setDefaultLang('en');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+    const storedLang = localStorage.getItem(STORED_LANGUAGE_KEY);
+    translate.use(storedLang ? storedLang : (browserLang.match(/en|fr/) ? browserLang : 'en'));
   }
 
   ngOnInit(): void {
