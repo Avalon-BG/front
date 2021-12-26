@@ -74,6 +74,11 @@ app-root {
   src: url('assets/fonts/Spectral-Light.ttf') format('truetype') /* For Chrome and Safari */
 }
 
+@font-face {
+  font-family: 'Friz Quadrata';
+  src: url('assets/fonts/Friz-Quadrata-Regular.ttf') format('truetype') /* For Chrome and Safari */
+}
+
 // TOGGLE
 .mat-button-toggle-button {
   box-sizing: border-box !important;
