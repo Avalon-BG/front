@@ -4,20 +4,9 @@ import { StoreModule } from '@ngrx/store';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatRippleModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +29,8 @@ import { RoleDialogComponent } from './components/game/role-dialog/role-dialog.c
 import { QuestDialogComponent } from './components/game/quest-dialog/quest-dialog.component';
 import { RevealComponent } from './components/reveal/reveal.component';
 import { ICONS } from '../assets/icons';
+import { MATERIAL_MODULES } from './material.module';
+import { LangSwitchComponent } from './components/lang-switch/lang-switch.component';
 
 
 // AoT requires an exported function for factories
@@ -65,6 +56,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RoleDialogComponent,
     QuestDialogComponent,
     RevealComponent,
+    LangSwitchComponent,
     ...ICONS
   ],
   imports: [
@@ -81,20 +73,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    // Material
-    MatDialogModule,
-    MatCheckboxModule,
     BrowserAnimationsModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatProgressSpinnerModule,
-    MatTooltipModule,
-    MatChipsModule,
-    MatRippleModule,
-    MatButtonToggleModule,
+    ...MATERIAL_MODULES
   ],
   providers: [],
   bootstrap: [AppComponent],

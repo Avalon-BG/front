@@ -1,0 +1,50 @@
+/** Translation Icon **/
+.translation-icon {
+  z-index: 2;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background-color: rgba(80, 80, 80, 0.5);
+  border-radius: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.mat-menu-item {
+  display: flex !important;
+  align-items: center !important;
+
+  .flag-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .selected-lang {
+    color: #0d47a1;
+  }
+
+  .translation-key {
+    font-family: "Spectral Medium";
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 21px;
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 80px;
+  }
+}
+
+

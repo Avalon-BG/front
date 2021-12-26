@@ -3,6 +3,10 @@
     "playButtonLabel": "JOUER",
     "rulesButtonLabel": "RÈGLE DE JEU"
   },
+  "LANG_SWITCH": {
+    "french": "Français",
+    "english": "Anglais"
+  },
   "DASHBOARD": {
     "title": "Alors, qui joue ?",
     "selectLabel": "Combien êtes-vous ?",

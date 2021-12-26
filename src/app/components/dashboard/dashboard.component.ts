@@ -140,6 +140,10 @@ export class DashboardComponent implements OnInit {
     }));
   }
 
+  goBack(): void {
+    this.router.navigate(['']);
+  }
+
   getPlayerAvatarImg(index: number): string {
     if (!!this.players && this.players.length && !!this.players[index]) {
       return `/assets/avatars/${this.players[index].avatar_index}.png`;

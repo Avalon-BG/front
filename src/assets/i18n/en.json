@@ -3,6 +3,10 @@
     "playButtonLabel": "LAUNCH GAME",
     "rulesButtonLabel": "HOW TO PLAY"
   },
+  "LANG_SWITCH": {
+    "french": "French",
+    "english": "English"
+  },
   "DASHBOARD": {
     "title": "So, who’s playing?",
     "selectLabel": "How many are you?",

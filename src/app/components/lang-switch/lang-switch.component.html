@@ -1,0 +1,15 @@
+<app-globe-svg class="translation-icon" [matMenuTriggerFor]="menu"></app-globe-svg>
+<mat-menu [hasBackdrop]="false" #menu="matMenu">
+  <button mat-menu-item (click)="selectLang('en')">
+    <img class="flag-icon" src="assets/flags/uk-flag.png">
+    <span class="translation-key"
+          [ngClass]="selectedLang === 'en' ? 'selected-lang': ''">{{'LANG_SWITCH.english' | translate}}</span>
+    <app-check-svg *ngIf="selectedLang === 'en'"></app-check-svg>
+  </button>
+  <button mat-menu-item (click)="selectLang('fr')">
+    <img class="flag-icon" src="assets/flags/fr-flag.png">
+    <span class="translation-key"
+          [ngClass]="selectedLang === 'fr' ? 'selected-lang': ''">{{'LANG_SWITCH.french' | translate}}</span>
+    <app-check-svg *ngIf="selectedLang === 'fr'"></app-check-svg>
+  </button>
+</mat-menu>
