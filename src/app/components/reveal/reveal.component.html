@@ -28,7 +28,7 @@
         <div #cards class="cards"
              [style.transform]="transform">
           <div *ngFor="let player of players; let i = index;" class="card" (click)="selectPlayer(i)"
-               [ngClass]="carouselClasses(i)" >
+               [ngClass]="carouselClasses(i)">
             <div class="card-content" [ngClass]="carouselClasses(i)">
               <img class="player-avatar" [ngClass]="carouselClasses(i)" [src]="getPlayerAvatarImg(i)">
               <div class="player-name">{{player.name}}</div>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <button mat-raised-button class="reveal-button"
-            (click)="onReveal()">{{(reveal ? 'REVEAL.stopRevealing' : 'REVEAL.reveal') | translate}}</button>
+            (click)="onReveal()">{{(reveal ? (carouselIdx === (players.length - 1) ? 'REVEAL.lastStopRevealing' : 'REVEAL.stopRevealing') : 'REVEAL.reveal') | translate}}</button>
   </div>
   <div class="flex-center-column button-container">
     <button mat-raised-button (click)="goBack()">{{"REVEAL.back" | translate }}</button>
