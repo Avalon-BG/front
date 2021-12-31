@@ -1,0 +1,187 @@
+.spinner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
+}
+
+.button-container {
+  display: flex;
+  position: relative;
+}
+
+.title {
+  color: #000000;
+  font-family: "Spectral Medium";
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.button-container {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  align-items: center;
+  background-color: #EBEBEB;
+  justify-content: center;
+  flex-direction: row;
+  height: 60px;
+  @media screen and (min-width: 800px), screen and (min-height: 650px) {
+    height: 80px;
+  }
+}
+
+.mat-button-base {
+  margin: 8px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (min-width: 800px) {
+    flex-grow: 0;
+    width: 160px;
+  }
+}
+
+.scrollbar {
+  overflow: auto;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh
+}
+
+.card-container {
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  padding: 18px;
+  max-width: 1088px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media only screen and (min-width: 1150px) {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 8px 16px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 16px;
+  width: 260px;
+  height: 336px;
+  box-sizing: border-box;
+  border: 1px solid #C8C8C8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  margin-bottom: 8px;
+
+  @media only screen and (min-width: 800px) {
+    margin: auto;
+  }
+
+  .card-title {
+    display: flex;
+    justify-content: center;
+    font-family: "Spectral Medium";
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card-checkbox {
+    position: absolute;
+  }
+
+  .card-img-container {
+    box-sizing: border-box;
+    display: flex;
+    height: 170px;
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .card-img {
+      object-fit: fill;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-description-container {
+    margin-top: 16px;
+    display: flex;
+    color: #000000;
+    font-family: "Spectral Medium";
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+
+
+    .card-description {
+      font-family: "Spectral Medium";
+      width: 100%;
+    }
+
+    .card-half-description {
+      font-family: "Spectral Medium";
+      width: 50%;
+    }
+  }
+
+
+}
+
+
+.card.morgan_perceval {
+  background: rgba(255, 0, 51, .6); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(255, 0, 51, .6), rgba(13, 71, 161, .6)); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(255, 0, 51, .6), rgba(13, 71, 161, .6));
+}
+
+.card.merlin {
+  background: rgba(13, 71, 161, .6); /* fallback for old browsers */
+}
+
+.card.mordred {
+  background: rgba(255, 0, 51, .6);
+}
+
+.card.oberon {
+  background: rgba(255, 0, 51, .6);
+}
+
+.card:hover {
+  transform: translate3d(-4px, -4px, 0);
+  transition: transform 0.3s;
+}
+
+.card-title.blue {
+  color: rgba(13, 71, 161)
+}

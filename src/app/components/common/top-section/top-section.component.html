@@ -1,0 +1,15 @@
+<div class="top-section">
+    <div class="breadcrumb">
+      <div class="circle-breadcrumb" [ngClass]="{'filled-breadcrumb': step === 0, 'clickable-breadcrumb': step > 0}" (click)="redirect(0)"></div>
+      <div class="circle-breadcrumb" [ngClass]="{'filled-breadcrumb': step === 1, 'clickable-breadcrumb': step > 1}" (click)="redirect(1)"></div>
+      <div class="circle-breadcrumb" [ngClass]="{'filled-breadcrumb': step === 2, 'clickable-breadcrumb': step > 2}" (click)="redirect(2)"></div>
+      <div class="circle-breadcrumb" [ngClass]="{'filled-breadcrumb': step === 3, 'clickable-breadcrumb': step > 3}" (click)="redirect(3)"></div>
+    </div>
+    <div class="title">
+      {{title}}
+    </div>
+
+    <div class="description">
+      {{description}}
+    </div>
+  </div>

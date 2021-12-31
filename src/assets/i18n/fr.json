@@ -42,7 +42,7 @@
     "oberon": "Oberon",
     "mordred": "Mordred",
     "merlin": "Merlin",
-    "morgana": "Morgane",
+    "morgan": "Morgane",
     "perceval": "Perceval",
     "red": "Serviteur de Mordred",
     "blue": "Fidèle d'Arthur",
@@ -54,10 +54,9 @@
   },
   "AUDIO": {
     "title": "L'histoire commence...",
-    "startStoryButtonLabel": "Lancer l'histoire",
-    "restartStoryButtonLabel": "Relancer l'histoire",
-    "stopStoryButtonLabel": "Arrêter l'histoire",
-    "startGameButtonLabel": "Commencer la partie"
+    "pauseStoryButtonLabel": "ARRÊTER / REPRENDRE",
+    "back": "RETOUR",
+    "next": "Zéé PARTI!"
   },
   "GAME": {
     "questTitle": "Quête n°",
@@ -136,5 +135,10 @@
     "resultTitle": "Résultat",
     "playersTitle": "Joueurs",
     "votesTitle": "Votes"
+  },
+  "STEPCONFIRMATIONDIALOG": {
+    "title": "Si vous continuez, une redistribution des rôles sera effectuée.",
+    "cancelButton": "Annuler",
+    "confirmationButton": "Continuer"
   }
 }

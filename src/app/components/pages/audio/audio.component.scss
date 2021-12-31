@@ -1,0 +1,60 @@
+.center-loader {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-container {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listener {
+  height: 216px;
+  width: 216px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.stop-button {
+  align-self: center;
+  margin-top: 25px !important;
+  width: 200px;
+}
+
+.button-container {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  align-items: center;
+  background-color: #EBEBEB;
+  justify-content: center;
+  flex-direction: row;
+  height: 60px;
+  @media screen and (min-width: 800px), screen and (min-height: 650px) {
+    height: 80px;
+  }
+
+  .mat-button-base {
+    margin: 8px;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: 800px) {
+      flex-grow: 0;
+      width: 160px;
+    }
+  }
+}
+
+

@@ -1,0 +1,23 @@
+<div class="center-loader" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="flex-center-column" *ngIf="!loading">
+  <app-top-section [step]="3" [title]="'AUDIO.title' | translate"></app-top-section>
+  <div class="audio-container">
+    <div class="listener">
+      <mat-spinner class="progress-spinner" strokeWidth="4" diameter="216" value="100"
+                   [mode]="playing ? 'indeterminate': 'determinate'"></mat-spinner>
+      <mat-spinner class="bcg-spinner" strokeWidth="4" diameter="216" value="100" mode="determinate"></mat-spinner>
+      <app-audio-wave-svg [animated]="playing"></app-audio-wave-svg>
+    </div>
+    <button mat-raised-button class="stop-button"
+            (click)="pauseAudio()">{{'AUDIO.pauseStoryButtonLabel' | translate}}</button>
+  </div>
+  <div class="flex-center-column button-container">
+    <button mat-raised-button (click)="goBack()">{{"AUDIO.back" | translate }}</button>
+    <button mat-raised-button color="primary" (click)="playGame()"
+            [disabled]="loading">{{'AUDIO.next' | translate}}
+    </button>
+  </div>
+</div>

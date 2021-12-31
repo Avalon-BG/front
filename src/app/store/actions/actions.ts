@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 
 import { Event } from '../reducers';
-import { Game, GameResult, Player, QuestResult, Rules } from '../../types';
+import { Game, Player, QuestResult, Rules } from '../../types';
 
 // Events Actions
 

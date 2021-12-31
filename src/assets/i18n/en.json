@@ -42,7 +42,7 @@
     "oberon": "Oberon",
     "mordred": "Mordred",
     "merlin": "Merlin",
-    "morgana": "Morgana",
+    "morgan": "Morgana",
     "perceval": "Percival",
     "red": "Mordred's minion",
     "blue": "Arthur's servant",
@@ -135,5 +135,10 @@
     "resultTitle": "Result",
     "playersTitle": "Players",
     "votesTitle": "Votes"
+  },
+  "STEPCONFIRMATIONDIALOG": {
+    "title": "If you confirm, a role redistribution will take place.",
+    "cancelButton": "Cancel",
+    "confirmationButton": "Confirm"
   }
 }

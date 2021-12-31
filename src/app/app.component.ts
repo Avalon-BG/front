@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { getRules } from './store/actions/actions';
 import { State } from './store/reducers';
-import { STORED_LANGUAGE_KEY } from './components/lang-switch/lang-switch.component';
+import { STORED_LANGUAGE_KEY } from './components/common/lang-switch/lang-switch.component';
 
 @Component({
   selector: 'app-root',

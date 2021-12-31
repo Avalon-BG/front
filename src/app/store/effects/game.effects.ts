@@ -85,7 +85,6 @@ export class GameEffects {
       ])
     ),
     catchError((err) => {
-      console.log(err);
       return of(actions.onErrorSend());
     })
     )
