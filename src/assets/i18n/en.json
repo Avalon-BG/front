@@ -1,7 +1,11 @@
 {
   "LANDING": {
-    "playButtonLabel": "LAUNCH GAME",
-    "rulesButtonLabel": "HOW TO PLAY"
+    "title": "Avalon",
+    "playButtonLabel": "LAUNCH A GAME",
+    "rulesButtonLabel": "LEARN HOW TO PLAY",
+    "cardIntroDesc1": "Avalon is a game of hidden loyalty, played by 5 to 10 players, that pits the forces of Good & Evil in a battle to control the future of civilization.",
+    "cardIntroDesc2": "You are either a Loyal Servant of Arthur fighting for Good or a Minion of Mordred fighting for Evil, remaining hidden from all but Merlin.",
+    "cardIntroDesc3": "Good wins by successfully finishing 3 Quests. Evil wins if 3 Quests fail or by killing Merlin at game's end or if no Quest is undertaken."
   },
   "LANG_SWITCH": {
     "french": "French",

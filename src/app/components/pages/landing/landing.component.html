@@ -1,22 +1,36 @@
 <app-lang-switch></app-lang-switch>
-<div class="bcg">
-  <img class="bcg-image" src="../../../assets/bcg/bcg-image.jpeg"/>
-
-  <div class="flex-center-column landing-container">
-    <div class="title">AVALON</div>
-    <div class="button-container">
-      <button mat-raised-button (click)="launchGame()">
-        {{'LANDING.playButtonLabel' | translate}}
-      </button>
-      <a [href]="pdfUrl">
-        <button mat-raised-button>
-          {{'LANDING.rulesButtonLabel' | translate}}
-        </button>
-      </a>
+<div class="flex-center-column">
+  <div class="top-section">
+    <div class="title">{{'LANDING.title' | translate}}</div>
+    <div class="game-intro-container">
+      <div class="game-intro-cards" [style.transform]="transform">
+        <div class="game-intro-card">
+          <img />
+          <span class="card-description">{{'LANDING.cardIntroDesc1' | translate}}</span>
+        </div>
+        <div class="game-intro-card">
+          <img />
+          <span class="card-description">{{'LANDING.cardIntroDesc2' | translate}}</span>  
+        </div>
+        <div class="game-intro-card">
+          <img />
+          <span class="card-description">{{'LANDING.cardIntroDesc3' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <div class="circle-breadcrumb" *ngFor="let number of [0,1,2]"
+        [ngClass]=" cardDisplayed === number ? 'filled-breadcrumb':''" (click)="select(number)"></div>
     </div>
   </div>
-
-  <!-- Fireflies -->
-  <div *ngFor="let firefly of fireflies" class="firefly">
+  <div class="button-container">
+    <button mat-raised-button class="negative-button" (click)="launchGame()">
+      {{'LANDING.playButtonLabel' | translate}} &rarr;
+    </button>
+    <a [href]="pdfUrl">
+      <button mat-raised-button>
+        {{'LANDING.rulesButtonLabel' | translate}}
+      </button>
+    </a>
   </div>
 </div>

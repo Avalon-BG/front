@@ -1,185 +1,83 @@
-.mat-button-base {
-  height: 48px;
-  width: 320px;
-  margin-top: 8px;
+.top-section {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F0F0F5;
+}
+
+.title {
+  font-family: "Grenze Gotisch";
+  color: #1E1E23;
+  font-weight: 300;
+  font-size: 56px;
+  margin-top: 88px;
 
   @media only screen and (min-width: 800px) {
-    width: 336px;
     margin-top: 0px;
-    margin-right: 24px;
   }
 }
 
-.landing-container {
-  justify-content: space-between;
+.game-intro-container {
+  overflow: hidden;
+  height: 100%;
+  width: 232px;
+  align-items: center;
+  display: flex;
+
+  @media only screen and (min-width: 800px) {
+    overflow: auto;
+    width: 100%;
+  }
+}
+
+.game-intro-cards {
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  display: flex;
+  width: 100%;
+}
+
+.game-intro-card {
+  flex-shrink: 0;
+  width: 232px;
+  text-align: center;
+}
+
+.card-description {
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #1E1E23;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+
+.circle-breadcrumb {
+  box-sizing: border-box;
+  height: 8px;
+  width: 8px;
+  background-color: #C3C4C8;
+  border-radius: 8px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.filled-breadcrumb {
+  background-color: #737378;
 }
 
 .button-container {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
-  margin-bottom: 48px;
-
-  @media only screen and (min-width: 800px) {
-    flex-direction: row;
-    margin-bottom: 150px;
-  }
-}
-
-.title {
-  color: #EDB852;
-  font-family: "Friz Quadrata";
-  font-size: 80px;
-  margin-top: 80px;
-  z-index: 1;
-  text-shadow: 1px 0 0 #13181B, -1px 0 0 #13181B, 0 1px 0 #13181B, 0 -1px 0 #13181B, 1px 1px #13181B, -1px -1px 0 #13181B, 1px -1px 0 #13181B, -1px 1px 0 #13181B;
-  -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2.5s; /* Firefox < 16 */
-  -ms-animation: fadein 2.5s; /* Internet Explorer */
-  -o-animation: fadein 2.5s; /* Opera < 12.1 */
-  animation: fadein 2.5s;
-}
-
-.bcg-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.bcg {
-  flex-grow: 1;
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url('https://images.unsplash.com/photo-1571398194652-7f0d9cdac2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
-}
-
-
-$quantity: 15;
-
-@keyframes drift {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes flash {
-  0%, 30%, 100% {
-    opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow 5%;
-    opacity: 1;
-    box-shadow: 0 0 2vw 0.4vw yellow;
-  }
-}
-
-
-.firefly {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 0.4vw;
-  height: 0.4vw;
-  margin: -0.2vw 0 0 9.8vw;
-  animation: ease 200s alternate infinite;
-  pointer-events: none;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform-origin: -10vw;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform-origin: -10vw;
-  }
-
-  &::before {
-    background: black;
-    opacity: 0.4;
-    animation: drift ease alternate infinite;
-  }
-
-  &::after {
-    background: white;
-    opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow;
-    animation: drift ease alternate infinite, flash ease infinite;
-  }
-}
-
-// Randomize Fireflies Motion
-@for $i from 1 through $quantity {
-  $steps: random(12) + 16;
-  $rotationSpeed: random(10) + 8s;
-  .firefly:nth-child(#{$i}) {
-    animation-name: move#{$i};
-
-    &::before {
-      animation-duration: #{$rotationSpeed};
-    }
-
-    &::after {
-      animation-duration: #{$rotationSpeed}, random(6000) + 5000ms;
-      animation-delay: 0ms, random(8000) + 500ms;
-    }
-  }
-  @keyframes move#{$i}{
-    @for $step from 0 through $steps {
-      #{$step * (100 / $steps)}% {
-        transform: translateX(random(100) - 50vw) translateY(random(100) - 50vh) scale(random(75) / 100 + .25);
-      }
-    }
-  }
-}
-
-/** FADEIN Animation (title) **/
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  height: 144px;
 }
